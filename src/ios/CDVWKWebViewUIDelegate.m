@@ -120,4 +120,17 @@
     [rootController presentViewController:alert animated:YES completion:nil];
 }
 
+- (WKWebView *)webView:(WKWebView *)webView createWebViewWithConfiguration:(WKWebViewConfiguration *)configuration forNavigationAction:(WKNavigationAction *)navigationAction windowFeatures:(WKWindowFeatures *)windowFeatures
+{
+    //http://stackoverflow.com/a/25853806/6262644
+    if (!navigationAction.targetFrame.isMainFrame) {
+        // Opens target="_blank" in Safari
+        if ([[UIApplication sharedApplication] canOpenURL:navigationAction.request.URL]) {
+            [[UIApplication sharedApplication] openURL:navigationAction.request.URL];
+        }
+    }
+    
+    return nil;
+}
+
 @end
