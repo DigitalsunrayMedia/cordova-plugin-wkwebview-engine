@@ -34,6 +34,7 @@
         <engine name="cordova-ios" version=">=4.0.0-dev" />
         <engine name="apple-ios" version=">=9.0" />
 	</engines>
+    <dependency id="cordova-plugin-app-version" url="https://github.com/whiteoctober/cordova-plugin-app-version" />
 
     <!-- ios -->
     <platform name="ios">
